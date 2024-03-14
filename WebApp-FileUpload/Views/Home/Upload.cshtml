@@ -1,0 +1,45 @@
+﻿@model UploadModel
+@using WebApp_FileUpload.Models
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Upload</title>
+</head>
+<body>
+    <div style="max-width:40em;margin:auto;background-color:aquamarine ;border-radius:.4em;padding:.4em; text-align:center">
+        <h1 style="margin-top:0; text-align: center; text-decoration: underline; color: #216477">Datei Upload/Auswählen und Uploaden </h1>
+
+
+        <form action="/home/upload" method="post" enctype="multipart/form-data">
+
+            <label asp-for="Bezeichnung"></label><br /><br />
+            <input asp-for="Bezeichnung" name="Bezeichnung" />
+            <br />           
+            <span style="color:crimson" asp-validation-for="Bezeichnung"></span><br />
+            <br />
+
+
+            <label asp-for="UploadDatei"></label><br /> <br />          
+            <input asp-for="UploadDatei" type="file" accept="image/*" /><br />
+            <br />
+            <span style="color:crimson" asp-validation-for="UploadDatei"></span><br />
+            <br />
+          <br />
+          <br />
+            <button type="submit">Upload</button> 
+            <br />
+            <br />
+            <button type="reset">Reset</button>
+        </form>
+        <br />
+        <br />
+        <a href="/home/index">Home</a>
+    </div>
+
+  
+</body>
+</html>

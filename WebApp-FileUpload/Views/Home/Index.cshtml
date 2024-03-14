@@ -1,0 +1,25 @@
+﻿@* @model List<FileInfo> *@
+@model List<string>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Upload/Home</title>
+</head>
+<body>
+    <div style="max-width:40em;margin:auto;background-color:aquamarine ;border-radius:.4em;padding:.4em; text-align:center">
+        <h1 style="margin-top:0; text-align: center; text-decoration: underline; color: #216477">Datei Upload/Home</h1>
+<br />
+<a href="/home/Upload">Datei hochladen </a>
+        <br /> <br />
+        <div style="display:flex; flex-wrap:wrap;gap:10px">
+            @foreach (var Bild in Model)
+            {
+                <img style="border-radius:.4em;" height="100" src="/Images/@Bild" title="@Bild.Substring(36)" />
+            }
+        </div>
+      </div>
+</body>
+</html>
